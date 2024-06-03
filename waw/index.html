@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Optional: Add some styles for smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Highlight transition */
+        .highlight {
+            animation: highlight-animation 1.5s ease-in-out;
+        }
+        
+        @keyframes highlight-animation {
+            0% { background-color: dodgerblue; }
+            100% { background-color: transparent; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="home-content">
+            <h1>Hi,</h1>
+            <h3>It's Rayhan Ilham Rabbani!</h3>
+            <p>"Upon men was his own name and word,
+            <br>for it was all that a man had :
+            <br>his <strong>identity</strong>, and his <strong>actions</strong>."</p>
+            <img src="plesholder.jfif" alt="Portrait" class="portrait">
+        </div>
+    </section>
+
+    <div class="content-container">
+        <section id="about">
+            <h1>About Me</h1>
+            <p>A student of the RPL major from the renowned vocational school SMKN 4 Bandung,</p>
+            <p>I'm a developer with a passion for creating just about a functional website. Not fully though, it seems.</p>
+            <p>I mostly make more sense on the logic side, rather than it's views.</p>
+        </section>
+
+        <section id="projects">
+            <h1>Projects</h1>
+            <div class="project">
+                <h2>Transaction Page (with Vuejs!)</h2>
+                <p>I made a vuejs project! I'm sure you'll like this one! It's really functional!</p>
+                <p>If you're interested, <a href="https://github.com/WardenHi/bin-2010">Check it out!</a></p>
+            </div>
+            <div class="project">
+                <h2>Database-supported php native?!</h2>
+                <p>Yep! I also connect a php native page to a local database through SQL!</p>
+                <p>If you're interested, <a href="https://github.com/WardenHi/first-class-unnerve">Hop on to the git page!</a></p>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <h1>Contact</h1>
+            <p>You can reach me at <a href="mailto:rayhanilhamrabbani@gmail.com">rayhanilhamrabbani@gmail.com</a></p>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Rayhan Ilham Rabbani</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetSection = document.querySelector(this.getAttribute('href'));
+
+                targetSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                // Add highlight class
+                targetSection.classList.add('highlight');
+
+                // Remove highlight class after 1 second
+                setTimeout(() => {
+                    targetSection.classList.remove('highlight');
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
